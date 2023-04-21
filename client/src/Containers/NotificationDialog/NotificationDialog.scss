@@ -1,0 +1,52 @@
+@import "../../Styles/variables";
+
+.notif-dialog-main{
+    .notif-dialog-title{
+        background-color: $primary-brown;
+    }
+   
+    
+    .notif-dialog-content{
+        min-width: 30vw;
+        background-color: $primary-beige-light;
+    }
+}
+
+
+
+
+.event-notif-main{
+    .event-notif-title-container{
+        padding: 8px 0px;
+       
+    }
+    .event-cards-container{
+        .event-card-loader{
+            width: 100%;
+        }
+        .event-card-main{
+            width: 100%;
+            background-color: $primary-brown;
+            padding: 8px;
+            margin: 8px 0px;
+            border-radius: 5px;
+            .event-card-details-container{
+                .event-card-title-container{
+                    .event-card-title{
+                        font-size: large;
+                    }
+                }
+                .event-card-date-container{
+                    .event-card-date{
+                        
+                    }
+                }
+
+            }
+        }
+        .event-emtpty-text-container{
+            
+            padding: 24px 0px;
+        }
+    }
+}
