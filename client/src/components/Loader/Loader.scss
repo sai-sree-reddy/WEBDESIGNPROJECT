@@ -1,0 +1,21 @@
+
+@import '../../Styles/_variables.scss';
+
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-beige-opacity;
+
+    img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.mini-loader{
+    width: 100%;
+    height: 50%;
+}
