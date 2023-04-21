@@ -1,0 +1,47 @@
+@import '../../Styles/variables.scss';
+
+.dashboard-main {
+
+    background-color: $primary-beige-light;
+    height: 100%;
+    width: 100%;
+    border: 1px solid $primary-beige-light;
+
+    .divider {
+        border: 1px solid $primary-red;
+        opacity: 0.2;
+    }
+   
+}
+
+.dashboard-section-main {
+    padding: 16px 8px 48px 8px;
+
+    .title-container {
+        padding: 8px 0px 24px 0px;
+    }
+    .selector-container {
+        padding: 16px 16px;
+    }
+    
+}
+
+
+.activity-slider-main {
+    
+    .scroll-option {
+        // min-height: 250px;
+        align-items: center;
+        justify-content: center;
+     .scroll-option-icon{
+         cursor: pointer;
+     }    
+
+    }
+    
+}
+.scroll-div{
+    overflow-x: auto;
+    width:'100%';
+    padding: 16px 0px;
+}

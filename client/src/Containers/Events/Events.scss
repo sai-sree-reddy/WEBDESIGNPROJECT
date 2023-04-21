@@ -1,0 +1,138 @@
+@import '../../Styles/_variables.scss';
+@import '../../Styles/_mixins.scss';
+
+.events-container{
+    background-color: $primary-beige;
+    padding-bottom: 10px;
+    height: 100%;
+
+    .not-result {
+        color: $white;
+        font-family: "SemiBold";
+        height: 100vh;
+    }
+
+    .event-title {
+        color: $white;
+        margin: 0;
+        padding: 40px 0 20px 0;
+        text-align: center;
+        font-family: "SemiBold";
+        font-size: 36px;
+    }
+    
+    .card-wrapper {
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+      display: flex;
+      padding: 20px;
+      margin: 60px ;
+      cursor: pointer;
+      background-color: $primary-red;
+      color: $primary-beige;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+        transform: translateY(-5px);
+      }
+
+      .left-part {
+          margin-right: 30px;
+        img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+      }
+
+      .right-part {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 100%;
+
+          .card-title {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              align-items: center;
+              margin-bottom: 20px;
+
+              h2 {
+                color: $primary-beige;
+                font-size: 24px;
+              }
+
+              div {
+                color: $primary-black;
+                font-family: "SemiBold";
+                font-size: 20px;
+              }
+          }
+
+          span {
+            font-family: "Regular";
+            font-size: 16px;
+          }
+
+          .right-bottom {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              align-items: center;
+              margin-top: auto;
+
+              a {
+                  text-decoration: none;
+                  font-family: "Regular";
+                  color: $primary-black;
+                  cursor: pointer;
+                  font-size: 18px;
+              }
+
+              .event-button {
+                @include redButton();
+                margin-right: 10px;
+                color: $white;
+                font-family: "Regular";
+                font-size: 18px;
+                padding: 10px 20px;
+              }
+          }
+
+          .info {
+            height: 60px;
+            text-align: left;
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          
+          p {
+              text-align: left;
+              font-size: 18px;
+              margin-bottom: 20px;
+          }
+
+          h2 {
+            text-decoration: none;
+            color: $primary-black;
+            margin: 0 0 5px 0;
+            font-size: 24px;
+          }
+      }
+    }
+}
+
+.event-search-wrapper {
+  padding: 0 10px;
+    .event-text-field {
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 15px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+  }

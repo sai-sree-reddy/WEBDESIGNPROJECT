@@ -1,0 +1,283 @@
+@import './../../Styles/mixins';
+@import './../../Styles/variables';
+@font-face {
+    font-family: 'semi bold';
+    src: url('../../Assets/Fonts/JosefinSans-SemiBold.ttf')
+}
+
+.styleH1{
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 2px;
+    color: $primary-brown;
+}
+
+.styleHr{
+    border-top: 1px solid grey;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.Mini-loader{
+    padding-top: 15px;
+}
+.mainContainer{
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    height: 120vh;
+    background-color: $primary-beige-opacity;
+    .header{
+        grid-column: 2 / span 12;
+        grid-row : 1;
+    }
+    .innerContainer{
+        grid-column: 2 / span 12;
+        grid-row : 2 / span 12;
+        height: 100vh;
+        //background-color: $primary-beige-opacity;
+        border-radius: 20px;
+        box-shadow: 0 0 25px $primary-brown;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .detailsContainer{
+            grid-column: 1 / span 2;
+            //border : 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+            height: 100vh;
+            p{
+                color: $primary-red;
+
+            }
+            .header{
+                grid-column: 1 / span 2;
+                grid-row : 1;
+                h2{
+                   @extend .styleH1;
+                }
+                hr{
+                   @extend .styleHr;
+                }  
+            }
+
+            .userName_email_Container{
+                @include userProfileRowContainer(1, 2 , 2,grid, 5px, 2, 1);
+                .userName_Container{
+                    @include  userProfileColumnContainer (1,1,0.5rem, 80%, center);
+                    input{   
+                        @include userProfileColInputContainer(block, 10px, none, 2px, 45px, 100%, solid, $primary-red, $primary-beige-opacity);
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+                .email_Container{
+                    @extend .userName_Container;
+                    grid-column: 2; 
+                }
+            }
+
+            .frst_lst_names_container{ 
+                @include userProfileRowContainer(1, 2, 3,grid, 5px, 2, 1);
+                .frst_name_container{
+                    @include userProfileColumnContainer (1, 1, 0.5rem, 80%, center);
+                    input{
+                        @include userProfileColInputContainer(block, 10px, none, 2px, 45px, 100%, solid, $primary-red, $primary-beige-opacity);
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+
+                .lst_name_container{
+                    @extend .frst_name_container;
+                    grid-column: 2;
+                }
+            }
+
+            .phone_country_Container{
+                @include userProfileRowContainer(1, 2, 4, grid, 5px, 2, 1);
+                
+                .phone_Container{
+                    @include userProfileColumnContainer (1, 1, 0.5rem, 80%, center);
+                    input{
+                        @include userProfileColInputContainer(block, 10px, none, 2px, 45px, 100%, solid, $primary-red, $primary-beige-opacity);
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+                .country_Container{
+                    @extend .phone_Container;
+                    grid-column:2;
+                    div{
+                        //height: 40px;
+                        width: 102%;  
+                        color: $primary-red;
+                    }
+                }
+            }
+
+            .dob_gender_container{
+                @include userProfileRowContainer(1, 2, 5, grid, 5px, 2, 1);
+                .dob_container{
+                    @include userProfileColumnContainer (1, 1, 0.5rem, 80%, center);
+                    input{
+                        @include userProfileColInputContainer(block, 10px, none, 2px, 45px, 100%, solid, $primary-red, $primary-beige-opacity);
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+
+                .gender_container{
+                    @extend .dob_container;
+                    grid-column: 2 ;
+                    div {
+                        //height: 40px;
+                        width: 102%;
+                        color: $primary-red;
+                    }
+                }
+            }
+
+            .height_weight_container{
+                @include userProfileRowContainer(1, 2, 6, grid, 5px, 2, 1);
+                .height_container{
+                    @include userProfileColumnContainer (1, 1, 0.5rem, 80%, center);
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr ;
+                    .ft-container{
+                        @include userProfileColumnContainer (1, 1, 0.5rem, 80%, left);
+                        div {
+                            //height: 40px;
+                            width: 105%;
+                            color: $primary-red;
+                        }
+                    }
+                    .in-container {
+                        @extend .ft-container;
+                        grid-column: 2;
+                        color: $primary-red;
+                        justify-self: right;
+                    }
+                }
+                .weight_container {
+                    @include userProfileColumnContainer (2, 1, 0.5rem, 80%, center);
+                    
+                    input {
+                        @include userProfileColInputContainer(block, 10px, none, 2px, 45px, 100%, solid, $primary-red, $primary-beige-opacity);
+                        font-family: 'semi bold';
+                        font-size: medium;
+                        color: $primary-brown;
+                    }
+                }  
+            }
+
+            .bio-container{
+                //@include userProfileRowContainer(1, 1, 7, grid, 5px, 2, 1);
+                grid-column: 1/ span 2;
+                grid-row : 7;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                .textArea-Container{
+                    grid-column: 1;
+                    grid-row: 1;
+                    width: 100%;
+                    textarea{
+                        width: 90%;
+                        margin-left: 10px;
+                        background-color: $primary-beige-opacity;
+                        font-family: 'semi bold';
+                        font-size: medium;
+                        padding: 15px;
+                    }
+                    //@include userProfileColumnContainer (1, 1, 0.5rem, 80%, center);
+                }
+                
+            }
+            .footer-container{
+                grid-column: 1 / span 2;
+                grid-row : 8;
+                .button-container{
+                    text-align: left;
+                    margin-left: 55px;
+                    button {
+                        @include styleButton($primary-red, $primary-beige, 30px, 125px, 5px);
+                        margin-right: 5px;
+                        height: 50px;
+                        cursor: pointer;
+                        border-color: $primary-red;
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+            }
+
+        }
+        .imageContainer{
+            grid-column: 3 / span 1;
+            //border : 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(16, 1fr);
+            height: 100vh;
+            .header {
+                grid-column: 1 / span 8;
+                grid-row: 1 / span 2;
+            
+                h2 {
+                    @extend .styleH1;
+                }
+            
+                hr {
+                    @extend .styleHr;
+                }
+            }
+            .image-container{
+                grid-column: 2 / span 6;
+                grid-row: 3/ span 8;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(11, 1fr);
+                .image-holder{
+                    grid-column: 1 / span 2;
+                    grid-row: 1/ span 8;
+                    //border: 1px solid black;
+                    border-radius: 20px;
+                    box-shadow: 0 0 25px $primary-brown;
+                    img{
+                        max-width: 100%;
+                        max-height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .input-holder{
+                    grid-column: 1 / span 2;
+                    grid-row: 10 /span 2;
+                    input{
+                        display: none;
+                    }
+                    button{
+                        @include styleButton($primary-red, $primary-beige, 30px, 125px, 5px);
+                        margin-right: 5px;
+                        height: 50px;
+                        cursor: pointer;
+                        border-color: $primary-red;
+                        font-family: 'semi bold';
+                        font-size: medium;
+                    }
+                }
+            }
+            .empty-space{
+                grid-column: 1 / span 2;
+                grid-row: 10/ span 5;
+            }
+            .line{
+                grid-column: 1 / span 8;
+                grid-row: 15;
+            }
+        }
+    }
+}
