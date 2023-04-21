@@ -1,0 +1,32 @@
+@import '../../Styles/variables.scss';
+
+.activity-card-main {
+    background-color: $primary-black;
+    min-height: 265px;
+    min-width: 280px;
+    box-shadow: 2px 4px 4px black;
+    border-radius: 10px;
+    margin: 0px 30px;
+    align-items: center;
+    justify-content: center;
+    display: 'flex';
+
+    .activity-img-container{
+        height: 80%;
+        display: inline-block;
+        width: 100%;
+        border-radius: 10px;
+        padding: 24px 0px 8px 0px;
+    }
+    .activity-stats-container{
+        display: flex;
+        justify-content: center;
+        .activity-stat {
+            padding: 4px;
+            .activity-stat-text{
+                color: $primary-red;
+                font-weight: bolder;
+            }
+        }
+    }
+}
