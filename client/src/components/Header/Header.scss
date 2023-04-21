@@ -1,0 +1,79 @@
+@import '../../Styles/_variables.scss';
+
+.main-layout-container {
+  height: 100%;
+
+  .header-wrapper {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: $primary-red;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    z-index: 99;
+    padding: 0 20px;
+
+    .header-nav {
+      min-width: 40%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-grow: 1;
+
+      .notifications-btn {
+        color: $primary-beige;
+        font-size: 1.2rem;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $primary-brown;
+        }
+      }
+
+      .signout-btn {
+        background: none;
+        color: $primary-beige;
+        background-color: $primary-red;
+        border: 1px solid $primary-beige;
+        border-color: $primary-beige;
+        border-radius: 10px;
+        padding: 0px 10px;
+        margin-left: 15px;
+        margin-right: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $primary-beige;
+          color: $primary-red;
+        }
+      }
+
+      a {
+        color: $primary-beige;
+        text-decoration: none;
+        margin-left: 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $primary-brown;
+        }
+      }
+    }
+
+    .header-logo {
+      width: 70px;
+    }
+  }
+}
