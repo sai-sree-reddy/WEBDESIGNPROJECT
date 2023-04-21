@@ -1,0 +1,31 @@
+{
+  "name": "flex-appeal-server",
+  "version": "1.0.0",
+  "description": "Final Project =>  Flex Appeal",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info6150-spring-2022/final-project-flex-appeal.git"
+  },
+  "author": "Ruthwik, Siddhartha, Stuti, Varun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info6150-spring-2022/final-project-flex-appeal/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info6150-spring-2022/final-project-flex-appeal#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.10",
+    "node-fetch": "^3.2.3",
+    "nodemailer": "^6.7.3",
+    "request": "^2.88.2"
+  }
+}
