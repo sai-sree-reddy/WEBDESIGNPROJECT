@@ -1,0 +1,10 @@
+@import "../../Styles/variables";
+
+.message-display-main{
+    min-height: 200px;
+    .redirect-link{
+        background-color: $primary-beige-light;
+        text-decoration: none;
+        color: $text-red;
+    }
+}
