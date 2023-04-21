@@ -1,0 +1,18 @@
+.activity-slider-main {
+    
+    .scroll-option {
+        // min-height: 250px;
+        align-items: center;
+        justify-content: center;
+     .scroll-option-icon{
+         cursor: pointer;
+     }    
+
+    }
+    
+}
+.scroll-div{
+    overflow-x: auto;
+    width:'100%';
+    padding: 16px 0px;
+}
