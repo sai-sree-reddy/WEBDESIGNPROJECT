@@ -1,0 +1,29 @@
+@import '../../Styles/variables';
+
+.leaderboard-ext{
+    padding: 16px 0px;
+    .logo{
+        height: 350px;
+        width: 300px;
+    }
+    .leaderboard-main{
+        max-height: 400px;
+        overflow: auto;
+        .leaderboard-item{
+            padding: 16px 0px;
+            .leaderboard-item-logo{
+                padding: 4px 24px 0px 0px;
+                .leaderboard-logo{
+                    height: 45px;
+                    width: 45px;
+                }    
+            }
+            .leaderboard-item-info{
+                padding-left: 16px;
+                .leaderboard-item-info-logo{
+                    padding: 0px 16px;
+                }    
+            }
+        }
+    }
+}
