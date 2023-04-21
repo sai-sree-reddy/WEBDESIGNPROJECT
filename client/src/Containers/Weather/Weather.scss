@@ -1,0 +1,108 @@
+@import '../../Styles/_variables.scss';
+@import '../../Assets/Fonts/Fonts.scss';
+
+
+.container{
+    position: relative;
+}
+
+.backgroundImage{
+    display: flex;
+}
+
+.searchBox{
+    padding: 3%;
+    font-size: 1.5em;
+    color: $primary-beige-opacity;
+}
+
+.input {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 32%;
+    padding: 10px;
+    width: 35%;
+    margin-bottom: 3%;
+    font-size: 0.7em;
+    color: $primary-beige;
+    background-color: $primary-brown-opacity;
+    border: 1px solid $primary-beige;
+    border-radius: 4px;
+    font-family: "SemiBold";
+    &::placeholder{
+        color: $primary-beige;
+        background-color: none;
+        font-size: 0.8em;
+        font-family: "SemiBold";
+
+    }
+}
+
+.currentTemp {
+    font-size: 5rem;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.currentWeather{
+    width: 15%;
+    justify-content: center;
+    background-color: $primary-brown-opacity;
+}
+
+.currentWeatherDiv{
+    justify-content: center;
+    display: flex;
+    margin-top: -50px;
+}
+
+// .currentWeatherFeelsLike {
+//     //color: $primary-beige;
+// }
+// .currentWeatherWind {
+//     //color: $primary-beige;
+// }
+// .currentWeatherVisibility {
+//     //color: $primary-beige;
+// }
+// .currentWeatherHumidity {
+//     //color: $primary-beige;
+// }
+
+
+
+.currentWeatherDetailsDiv{
+    display:inline-flex;
+    justify-content:center;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+
+.everydayWeather{
+    width: 200px;
+    margin: 2% 2%;
+    background-color: $primary-brown-opacity;
+    
+
+}
+
+// .everydayCardContent{
+
+// }
+
+.everydayWeatherDiv{
+    justify-content:center;
+    display: flex;
+    
+}
+
+.maxTemp{
+    font-size: 2.5em;
+    
+}
+.minTemp{
+    font-size: 1.5em;
+    padding-top: 10%;
+}
