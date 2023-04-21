@@ -1,0 +1,118 @@
+
+
+@mixin flexType($flexDirection, $alignItems, $justifyContent) {
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $alignItems;
+    justify-content: $justifyContent;
+}
+
+@mixin redButton() {
+    background-color: #cc3d38;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin loginOuterContainerLayout($display, $height, $borderWidth, $borderColor){
+    display: $display;
+    grid-template-columns: repeat(5, 1fr);
+    height:$height;
+    overflow: auto;
+    border: $borderWidth $borderColor;
+}
+
+@mixin loginLeftContainer($colSpan, $rowSpan, $cols, $rows, $display, $backgroundColor){
+    grid-column: $colSpan / span $cols;
+    grid-row : $rowSpan / span $rows;
+    //border: 2px solid black;
+    display: $display;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:  repeat(6, 1fr);
+    background-color: $backgroundColor;
+}
+
+@mixin loginRightContainer($colStart, $colSpan, $rowStart, $rowSpan, $display, $backgroundColor, $opacity){
+    grid-column: $colStart /span $colSpan;
+    grid-row : $rowStart / span  $rowSpan;
+    //border: 2px solid black;
+    display: $display;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-template-rows:  repeat(6, 1fr);
+    background-color:$backgroundColor;
+    opacity: $opacity ;
+}
+
+@mixin loginLeftInnerContainer($colStart, $colSpan, $rowStart, $rowSpan, $borderRadius, $shadowColor, $display ) {
+    grid-column: $colStart / span $colSpan;
+    grid-row : $rowStart / span $rowSpan;
+    border-top-left-radius: $borderRadius;
+    border-bottom-left-radius: $borderRadius;
+    box-shadow: 0 0 $borderRadius $shadowColor;
+    display: $display;
+    grid-template-columns:  repeat(2, 1fr);
+    grid-template-rows:  repeat(4, 1fr);
+}
+
+@mixin loginRightInnerContainer($colStart, $colSpan, $rowStart, $rowSpan, $borderRadius, $shadowColor, $textAlign){
+    grid-column: $colStart / span $colSpan;
+    grid-row : $rowStart / span $rowSpan;
+    border-top-right-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    box-shadow: 0 0 $borderRadius $shadowColor;
+    text-align: $textAlign;
+}
+
+@mixin logoContainer($colStart, $colSpan, $rowStart, $rowSpan, $url, $backgroundSize, $backgroundRepeat, $backgroundPosition){
+    grid-column: $colStart/ span $colSpan;
+    grid-row : $rowStart / span $rowSpan;
+    background-image: url($url);
+    background-size: $backgroundSize;
+    background-repeat: $backgroundRepeat;
+    background-position: $backgroundPosition;
+}
+
+@mixin styleButton($backgroundColor, $color, $height, $width, $borderRadius){
+    background-color: $backgroundColor;
+    color: $color;
+    height: $height;
+    width: $width;
+    border-radius:  $borderRadius;
+}
+
+@mixin styleInput( $height, $width, $border-Radius, $backgroundColor, $borderRadius, $borderType, $borderColor){
+    height:  $height;
+    width: $width;
+    border-radius: $border-Radius;
+    background-color: $backgroundColor;
+    border: $borderRadius $borderType $borderColor;
+}
+
+@mixin userProfileRowContainer($col, $colSpan, $row, $display, $padding, $columns, $rows) {
+    grid-column: $col / span $colSpan;
+    grid-row: $row;
+    display: grid;
+    padding: 5px;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+}
+
+@mixin userProfileColumnContainer($col, $row, $marginBottom, $width, $justifySelf) {
+    grid-column: $col;
+    grid-row: $row;
+    margin-bottom: $marginBottom;
+    width: $width;
+    justify-self: $justifySelf;
+}
+
+@mixin userProfileColInputContainer($display, $paddingLeft, $outline, $borderRadius, $height, $width, $borderType, $borderColor, $backgroundColor) {
+    display: $display;
+    padding-left: $paddingLeft;
+    outline: $outline;
+    height: $height;
+    width: $width;
+    border: $borderRadius $borderType $borderColor;
+    background-color: rgba(250, 185, 154, 0.01);
+}
+

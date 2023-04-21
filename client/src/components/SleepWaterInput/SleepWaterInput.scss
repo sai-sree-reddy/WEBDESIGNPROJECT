@@ -1,0 +1,23 @@
+
+
+.health-form {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+        padding: 10px 40px 30px 0;
+    }
+
+    .text-field {
+        width: 300px;
+        padding-bottom: 50px;
+    }
+
+    .submit-btn {
+        width: 200px;
+        border-radius: 5px;
+        padding: 10px 0;
+    }
+}
