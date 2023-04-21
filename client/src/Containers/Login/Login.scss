@@ -1,0 +1,97 @@
+@import './../../Styles/mixins';
+@import './../../Styles/variables';
+
+@font-face {
+    font-family: 'semi bold';
+    src: url('../../Assets/Fonts/JosefinSans-SemiBold.ttf');
+}
+
+.login-outer-container {
+    @include loginOuterContainerLayout(grid, 100vh, 2px, black);
+
+    .left-container {
+        @include loginLeftContainer(1, 1, 2, 2, grid, $primary-red);
+
+        .left-inner {
+            @include loginLeftInnerContainer(3, 2, 2, 4, 25px, $primary-brown, grid);
+
+            .logo-container {
+                @include logoContainer(1, 2, 2, 2, "./../../Assets/Images/husky.png", 210px, no-repeat, center);
+                animation: logo-bounce 1s infinite alternate;
+            }
+        }
+    }
+
+    .right-container {
+        @include loginRightContainer(3, 3, 1, 2, grid, $primary-beige-opacity, 100%);
+
+        .right-inner {
+            @include loginRightInnerContainer(1, 3, 2, 4, 25px, $primary-brown, center);
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+
+            form {
+                grid-column: 1 / span 2;
+                grid-row: 2 / span 4;
+
+                h1, h4, p {
+                    color: $primary-red;
+                    font-family: 'semi bold';
+                }
+
+                a {
+                    color: $primary-red;
+                    text-decoration: none;
+                    font-family: 'semi bold';
+                }
+
+                .username-container {
+                    padding: 20px;
+
+                    label {
+                        color: $primary-red;
+                        padding-right: 20px;
+                        font-family: 'semi bold';
+                        font-size: 20px;
+                    }
+
+                    input {
+                        @include styleInput(50px, 250px, 10px, $primary-beige-opacity, 2px, solid, $primary-red);
+                        font-family: 'semi bold';
+                        font-size: 20px;
+                        color: $primary-brown;
+                        outline: none;
+                    }
+                }
+
+                .password-container {
+                    @extend .username-container;
+                }
+
+                .button-container {
+                    margin: 5px;
+
+                    button {
+                        @include styleButton($primary-red, $primary-beige, 50px, 350px, 10px);
+                        border-color: $primary-red;
+                        cursor: pointer;
+                        font-family: 'semi bold';
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes logo-bounce {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
