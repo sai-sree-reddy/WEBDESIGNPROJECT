@@ -1,0 +1,26 @@
+@import "../../Styles/variables.scss";
+
+.timeline-selector-main{
+    justify-content: center;
+    
+    
+    .timeline-selector-div{
+        overflow-x: auto;
+        width: 45%;
+        
+        .timeline-selected{
+            max-width: 90px;
+            cursor: pointer;
+            background-color: $primary-red;
+            border-radius: 4px;
+            height: 45px;
+            margin: 0px 8px;
+        }
+        .timeline {
+            max-width: 90px;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+    }
+    
+}
