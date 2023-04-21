@@ -1,0 +1,72 @@
+@import '../../Styles/_variables.scss';
+
+.modal-container {
+    color: $primary-beige-light;
+    font-family: "Regular";
+
+    .modal-wrapper {
+        background-color: $primary-brown;
+        // color: $black;
+        // height: 100%;
+        width: 500px;
+
+        .modal-content {
+            // height: 500px;
+            padding: 26px 24px !important;
+            // width: 100%; 
+            background-color: $primary-beige-light;
+        }
+
+        .food-search {
+            width: 100%;
+        }
+    }
+
+    .save-button-div {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        .sub-btn {
+            width: 35%;
+            padding: 10px 0;
+        }
+    }
+       
+}
+
+.food-items-wrapper {
+    padding: 20px 0;
+
+    .total-calories {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .food-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+        padding: 10px 0 10px 30px;
+
+        .wrap {
+            display: flex;
+            align-items: center;
+        }
+
+        .food-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+        }
+
+        .food-name {
+            padding: 0 30px;
+        }
+
+        .food-cal {
+            padding-right: 10px;
+        }
+    }
+}
