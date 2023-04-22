@@ -62,19 +62,25 @@ class SignUpComponent extends React.Component{
         }
     }
 
-    validateUsername(){
-        if(this.state.uuid.trim().length === 0){
+    validateUsername() {
+        if (this.state.uuid.trim().length === 0) {
             this.setState({
-                usernameError : "User Name is required"
-            })
+                usernameError: "User Name is required"
+            });
             return false;
-        }else{
+        } else if (/^[a-zA-Z0-9_]{6,20}$/.test(this.state.Username)) {
             this.setState({
-                usernameError : ""
-            })
+                usernameError: "Invalid username"
+            });
+            return true;
+        } else {
+            this.setState({
+                usernameError: ""
+            });
             return true;
         }
     }
+    
 
     validateEmail(){
         if(this.state.email.trim().length === 0){
@@ -83,7 +89,7 @@ class SignUpComponent extends React.Component{
             })
                 return false;
         }
-        else if (!/\S+@\S+\.\S+/.test(this.state.email)) {
+        else if (!/([\w\.]+)@(northeastern.edu)/.test(this.state.email)) {
             this.setState({
                 emailError : 'Email address is invalid'
             })
@@ -95,47 +101,80 @@ class SignUpComponent extends React.Component{
                 return true;
         }
     }
-    validateFirstname(){
-        if(this.state.firstName.trim().length === 0){
+    validateFirstname() {
+        const nameRegex = /^[A-Za-z]+$/; // regular expression to match only alphabets
+        if (this.state.firstName.trim().length === 0) {
             this.setState({
-                firstnameError : "First Name is required"
-            })
-                return false;    
-        }else{
-            this.setState({
-                firstnameError : ""
-            })
-                return true;
-        }
-    }
-
-    validateLastname(){
-        if(this.state.lastName.trim().length === 0){
-            this.setState({
-                lastnameError : "Last Name is required"
-            })
-                return false;
-        }else{
-            this.setState({
-                lastnameError : ""
-            })
-                return true;
-        }
-    }
-
-    validateDob(){
-        if(!this.state.dateOfBirth){
-            this.setState({
-                dobError : "Date Of Birth is required"
-            })
+                firstnameError: "First Name is required"
+            });
             return false;
-        }else{
+        } else if (!nameRegex.test(this.state.firstName.trim())) {
             this.setState({
-                dobError : ""
-            })
+                firstnameError: "First Name should only contain alphabets"
+            });
+            return false;
+        } else {
+            this.setState({
+                firstnameError: ""
+            });
             return true;
         }
     }
+    
+
+    validateLastname() {
+        const lastNameRegex = /^[a-zA-Z]+$/;
+        const lastName = this.state.lastName.trim();
+    
+        if (lastName.length === 0) {
+            this.setState({
+                lastnameError: "Last Name is required"
+            });
+            return false;
+        } else if (!lastNameRegex.test(lastName)) {
+            this.setState({
+                lastnameError: "Last Name should contain only alphabets"
+            });
+            return false;
+        } else {
+            this.setState({
+                lastnameError: ""
+            });
+            return true;
+        }
+    }
+    
+
+    validateDob(){
+        if(!this.state.dateOfBirth){
+          this.setState({
+            dobError : "Date Of Birth is required"
+          })
+          return false;
+        }else{
+          const dob = new Date(this.state.dateOfBirth);
+          const today = new Date();
+          const age = today.getFullYear() - dob.getFullYear();
+      
+          if(age < 16){
+            this.setState({
+              dobError: "You must be at least 16 years old."
+            })
+            return false;
+          }else if(age > 100){
+            this.setState({
+              dobError: "You cannot be more than 100 years old."
+            })
+            return false;
+          }else{
+            this.setState({
+              dobError : ""
+            })
+            return true;
+          }
+        }
+      }
+      
 
     validateGender(){
         if(this.state.gender.trim().length === 0){
@@ -157,18 +196,20 @@ class SignUpComponent extends React.Component{
                 passwordError : "Password is required"
             })
             return false;
-        }else if(this.state.password.length < 6){
+        } else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        .test(this.state.password)) {
             this.setState({
-                passwordError : "Password needs to be 6 characters or more"
+                passwordError : 'Password is invalid'
             })
-                return false;
-        }else{
+            return false;
+        } else {
             this.setState({
                 passwordError : ""
             })
-                return true;
+            return true;
         }
     }
+    
     validateSecurityQuestion(){
         if(this.state.securityQuestion.trim().length === 0){
             this.setState({
