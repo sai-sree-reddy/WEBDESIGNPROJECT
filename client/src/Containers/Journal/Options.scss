@@ -1,34 +1,59 @@
 @import '../../Styles/variables.scss';
 .options-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6%;
+  animation: fade-in 0.5s ease-in-out;
 }
 
 .log-away{
-    padding-top: -5%;
+  padding-top: -5%;
 }
-
-.add-fav-activities{
-    //padding-top: 3%;
-
-}
-    
 
 .divider{
-    border: 1px solid $primary-brown;
-    opacity: 0.2;
-    margin-top: 5%;
-
+  border: 1px solid $primary-brown;
+  opacity: 0.2;
+  margin-top: 5%;
+  animation: expand 0.5s ease-in-out;
 }
 
 .favorite-activities{
-    margin-top: 40px;
-    background-color: $primary-beige-light;
+  margin-top: 40px;
+  background-color: $primary-beige-light;
+  animation: slide-in-bottom 0.5s ease-in-out;
 }
 
 .journal-body{
-    background-color: $primary-beige-light;
+  background-color: $primary-beige-light;
+  animation: fade-in 0.5s ease-in-out;
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

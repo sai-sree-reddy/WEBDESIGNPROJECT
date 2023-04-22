@@ -1,17 +1,21 @@
 @import '../../Styles/variables.scss';
 
 .dashboard-main {
-
     background-color: $primary-beige-light;
     height: 100%;
     width: 100%;
     border: 1px solid $primary-beige-light;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:hover {
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+    }
 
     .divider {
-        border: 1px solid $primary-red;
+        border: 4px solid $primary-red;
         opacity: 0.2;
     }
-   
 }
 
 .dashboard-section-main {
@@ -19,29 +23,78 @@
 
     .title-container {
         padding: 8px 0px 24px 0px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        transition: background-color 0.2s ease-in-out; /* add transition effect */
+        animation: fadeIn 0.3s ease-in-out forwards; /* add fade in animation */
     }
+
     .selector-container {
         padding: 16px 16px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.2s ease-in-out; /* add transition effect */
+        animation: slideIn 0.3s ease-in-out forwards; /* add slide in animation */
     }
     
 }
-
 
 .activity-slider-main {
-    
     .scroll-option {
-        // min-height: 250px;
         align-items: center;
         justify-content: center;
-     .scroll-option-icon{
-         cursor: pointer;
-     }    
-
+        position: relative;
+        .scroll-option-icon{
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out; /* add transition effect */
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 2px;
+            background-color: $primary-red;
+            transition: width 0.2s ease-in-out; /* add transition effect */
+            animation: growLine 0.3s ease-in-out forwards; /* add grow line animation */
+        }
+        
+        &:hover {
+            .scroll-option-icon{
+                transform: scale(1.2); /* add hover effect */
+            }
+            &::before {
+                width: 30px; /* add hover effect */
+            }
+        }
     }
-    
 }
+
 .scroll-div{
     overflow-x: auto;
-    width:'100%';
+    width: 100%;
     padding: 16px 0px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out forwards; /* add fade in animation */
 }
+
+/* animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 1;
+    }}
