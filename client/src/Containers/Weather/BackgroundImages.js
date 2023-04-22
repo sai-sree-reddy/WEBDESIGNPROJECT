@@ -1,5 +1,5 @@
 import nightImage from '../../Assets/Images/night.png';
-import cloudsImage from '../../Assets/Images/clouds.jpeg';
+import cloudsImage from '../../Assets/Images/clouds.png';
 import rainImage from '../../Assets/Images/rain.jpeg';
 import sunnyImage from '../../Assets/Images/sunny.jpeg';
 import snowImage from '../../Assets/Images/snow.jpeg';
