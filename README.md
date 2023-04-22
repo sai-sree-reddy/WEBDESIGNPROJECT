@@ -1,17 +1,4 @@
-# WEBDESIGNPROJECT
-Final Project
-
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@sai-sree-reddy 
-sai-sree-reddy
-/
+#STUDENT COMPANION
 WEBDESIGNPROJECT
 Public
 Cannot fork because you own this repository and are not a member of any organizations.
@@ -111,16 +98,3 @@ node server
 - Nency Panchani - 002746779, panchani.n@northeastern.edu
 Footer
 © 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-WEBDESIGNPROJECT/readme.txt at main · sai-sree-reddy/WEBDESIGNPROJECT
