@@ -90,12 +90,13 @@ class ForgotPasswordComponent extends React.Component{
                 passwordError : "Password is required"
             })
             return false;
-        }else if(this.state.password.length < 6){
+        } else if(!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+        .test(this.state.password)) {
             this.setState({
-                passwordError : "Password needs to be 6 characters or more"
+                passwordError : 'Password is invalid'
             })
             return false;
-        }else{
+        } else {
             this.setState({
                 passwordError : ""
             })
@@ -249,7 +250,9 @@ render(){
                         <div className = "answerContainer">
                                     <input type="text" name="answer" className="form-input" placeholder="Please choose the answer to your question..."  onChange={this.handleChange.bind(this)}/>
                                     {this.state.answerError && <p>{this.state.answerError}</p>}
-                        </div> 
+                        </div>                                    
+                         <h4>Change of plans? GO &nbsp;<a href="http://localhost:3000">BACK</a></h4>
+
                 </div>
 
                         {isCorrectDetails? 
