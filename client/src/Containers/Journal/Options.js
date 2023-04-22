@@ -26,6 +26,7 @@ const Options = (props) =>{
     const onModalHandleClose = (option)=> {
         setSelectedHealth(option)
         setModalOpen(!isModalOpen)
+        console.log("option name: ", option)
         const modTypes = getModalTypesBasedOnNames(option.name ? option.name : option)
         setModalType(modTypes)
     }
@@ -37,8 +38,9 @@ const Options = (props) =>{
          <Button variant="outlined" onClick={() => onModalHandleClose(ModalType.ACTIVITY_OPTIONS_MODAL)}>
                  Add Your Favorite Activities
         </Button>
-        <div className="options-div" > 
+        <div className="options-div"> 
         {props.options.map((option, index)=>
+            
             <Button 
                 key={index} className="activity-button-image" 
                 onClick={()=>onModalHandleClose(option)}> 

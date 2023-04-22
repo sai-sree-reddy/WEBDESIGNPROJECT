@@ -5,7 +5,8 @@ import './ActivityCard.scss'
 
 const ActivityCard = (props) =>{
     return(
-        <div className="activity-card-main" onClick={()=>props.onClick(props.item)}>
+        <div className="activity-card-main" >
+            {/* onClick={()=>props.onClick(props.item)} */}
             <Grid className='activity-img-container'>
                 <img height={180} width={180} src={getActivityLogo(props.logoId)} alt="logo"/>
             </Grid>
